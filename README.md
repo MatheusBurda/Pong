@@ -5,7 +5,7 @@ Inspirado no famoso jogo de Atari, Pong foi desenvolvido quando estava começand
 ![PONG](pong.gif)
 
 
-## Instalando e rodando
+## Instalando
 
 Desenvolvido somente para Windows.
 
@@ -20,14 +20,15 @@ git clone https://github.com/MatheusBurda/Pong.git
 
 *Ou baixe o código no botão verde no topo da página e extraia os arquivos.
 
-Rodando o jogo:
+## Rodando o jogo:
+
 No diretório que está o projeto:
 ```
 gcc pong.c -o pong
 ./pong 
 ```
 
-E é só se divertir agora!
+Agora é só se divertir!
 
 ## Autor
 
