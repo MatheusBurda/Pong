@@ -10,17 +10,24 @@ Inspirado no famoso jogo de Atari, Pong foi desenvolvido quando estava começand
 Desenvolvido somente para Windows.
 
 Você vai precisar ter instalado:
-* [Git](https://git-scm.com/downloads)
+* [Git](https://git-scm.com/downloads)*
+* Compilador C, exemplo: [MinGW](http://www.mingw.org/)
 
 Clonar o repositório:
 ```
 git clone https://github.com/MatheusBurda/Pong.git
 ```
 
-Ou baixe o código no botão verde no topo da página e extraia os arquivos.
+*Ou baixe o código no botão verde no topo da página e extraia os arquivos.
 
-Para rodar o jogo basta abir o arquivo "pong.exe".
+Rodando o jogo:
+```
+cd Pong <!-- Muda para o diretório que está o projeto -->
+gcc pong.c -o pong /*Compila o arquivo*/
+./pong //Roda o jogo
+```
 
+E é só se divertir agora!
 
 ## Autor
 
