@@ -22,9 +22,9 @@ git clone https://github.com/MatheusBurda/Pong.git
 
 Rodando o jogo:
 ```
-cd Pong <!-- Muda para o diretório que está o projeto -->
-gcc pong.c -o pong /*Compila o arquivo*/
-./pong //Roda o jogo
+cd Pong # Muda para o diretório que está o projeto
+gcc pong.c -o pong # Compila o arquivo
+./pong # Roda o jogo
 ```
 
 E é só se divertir agora!

@@ -6,7 +6,7 @@
 #define ABAIXO 80
 #define ESC 27
 
-void SetColor(int ForgC)//  FUNÇAO PARA MUDAR AS CORES
+void SetColor(int ForgC)//  FUNï¿½AO PARA MUDAR AS CORES
 {
     WORD wColor;
 
@@ -25,7 +25,7 @@ void HideCursor()//ESCONDE O CURSOR
   CONSOLE_CURSOR_INFO cursor = {1, FALSE};
   SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursor);
 }
-void posicao(int linha,int coluna)//   FUNÇAO BASE PARA COLOCAR AS COISAS NOS LUGARES
+void posicao(int linha,int coluna)//   FUNï¿½AO BASE PARA COLOCAR AS COISAS NOS LUGARES
 {
     COORD p={linha,coluna};
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),p);
@@ -36,7 +36,7 @@ void bola(int x, int y)// IMPRIME A BOLA
     SetColor(15);
     printf("%c", 254);
 }
-void apagabola(int x, int y)// APAGA A BOLA ANTES DE ATUALIZAR A POSIÇAO DELA
+void apagabola(int x, int y)// APAGA A BOLA ANTES DE ATUALIZAR A POSIï¿½AO DELA
 {
     posicao(x,y);
     printf(" ");
@@ -57,11 +57,9 @@ void jogador1_baixo(int linha_j1, int cor)// MOVE JOGADOR 1 PARA BAIXO
     posicao(1, linha_j1+2);
     printf("%c", 178);
 
-    if(linha_j1>=limiteinf)
+    if(linha_j1<limiteinf)
     {
-    }
-    else
-    {
+    
         posicao(1, linha_j1+3);
         printf(" ");
     }
@@ -81,10 +79,7 @@ void jogador1_cima(int linha_j1, int cor)// MOVE JOGADOR 1 PARA CIMA
 
     posicao(1, linha_j1+3);
     printf(" ");
-    if(linha_j1<=limitesup)
-    {
-    }
-    else
+    if(linha_j1>limitesup)
     {
         posicao(1, linha_j1-1);
         printf(" ");
@@ -105,10 +100,7 @@ void jogador2_baixo(int linha_j2, int cor)// MOVE JOGADOR 2 PARA BAIXO
 
     posicao(58, linha_j2+2);
     printf("%c", 178);
-    if(linha_j2>=limiteinf)
-    {
-    }
-    else
+    if(linha_j2<limiteinf)
     {
         posicao(58, linha_j2+3);
         printf(" ");
@@ -129,10 +121,7 @@ void jogador2_cima(int linha_j2, int cor)// MOVE JOGADOR 2 PARA CIMA
 
     posicao(58, linha_j2+3);
     printf(" ");
-    if(linha_j2<=limitesup)
-    {
-    }
-    else
+    if(linha_j2>limitesup)
     {
         posicao(58, linha_j2-1);
         printf(" ");
@@ -150,7 +139,7 @@ void placar (int ponto1, int ponto2, int cor1, int cor2)// IMPRIME O PLACAR NA P
     SetColor(cor2);
     printf("%d", ponto2);
 }
-void imprimir_pong(int cor)//IMPRIME O "PONG" DO COMEÇO - DESNECESSARIO MAS FIZ PARA FICAR BONITINHO KKKKKKK
+void imprimir_pong(int cor)//IMPRIME O "PONG" DO COMEï¿½O - DESNECESSARIO MAS FIZ PARA FICAR BONITINHO KKKKKKK
 {
         int linha=3, coluna=15, c, l;
     SetColor(cor);
@@ -375,7 +364,7 @@ void imprimir_campo(int coluna)//IMPRIME O CAMPO
     posicao(61,4);
     printf("R   - recomecar");//AVISOS NO CANTO DA TELA
 }
-void cores()//PALHETA DE CORES PARA O MENU DE SELEÇAO DE CORES DOS JOGADORES
+void cores()//PALHETA DE CORES PARA O MENU DE SELEï¿½AO DE CORES DOS JOGADORES
 {
     posicao(2, 10);
     printf("Digite o respectivo numero da cor...\n\n");
@@ -448,7 +437,7 @@ main ()
     jogador1_cima(linha_j1, cor1);//imprime o jogador 1
     jogador2_cima(linha_j2, cor2);//imprime o jogador 2
 
-    while(fim!=0)//COMEÇO DO JOGO
+    while(fim!=0)//COMEï¿½O DO JOGO
     {
         system("cls");
         imprimir_campo(coluna);//imprime campo
@@ -457,17 +446,17 @@ main ()
         jogador1_cima(linha_j1, cor1);
         jogador2_cima(linha_j2, cor2);
         x=30;
-        y = 2 + ( rand() % 17 );           //SEMPRE COMEÇA DE ALGUMA ALTURA ALEATORIA MAS SEMPRE NO MEIO DO CAMPO
+        y = 2 + ( rand() % 17 );           //SEMPRE COMEï¿½A DE ALGUMA ALTURA ALEATORIA MAS SEMPRE NO MEIO DO CAMPO
         placar(ponto1, ponto2, cor1, cor2);
         restart=0;
         getch()                                                         ;
 
         while (restart==0)
        {
-            apagabola(x,y);//APAGA A BOLA ANTES DE ATUALIZAR A POSIÇÃO DELA
+            apagabola(x,y);//APAGA A BOLA ANTES DE ATUALIZAR A POSIï¿½ï¿½O DELA
             y=y+direcaoy;//ATUALIZA Y
             x=x+direcaox;//ATUALIZA X
-            bola(x,y);//IMPRIME BOLA COM POSIÇÃO ATUALIZADA
+            bola(x,y);//IMPRIME BOLA COM POSIï¿½ï¿½O ATUALIZADA
 
             if(y<=limitesup+1)//PARA REBATER A BOLINHA NA PARTE DE CIMA DO CAMPO
             {
@@ -530,7 +519,7 @@ main ()
                     }
                 }
 
-                if (tecla == ABAIXO)//RAQUETE 2 PARA BAIXO,     ABAIXO É A SETA PARA BAIXO
+                if (tecla == ABAIXO)//RAQUETE 2 PARA BAIXO,     ABAIXO ï¿½ A SETA PARA BAIXO
                 {
                     linha_j2++;
                     if(linha_j2<limiteinf-2)
@@ -542,7 +531,7 @@ main ()
                         linha_j2--;
                     }
                 }
-                if (tecla == ACIMA)// RAQUETE 2 PARA CIMA     ACIMA É A SETA PARA CIMA
+                if (tecla == ACIMA)// RAQUETE 2 PARA CIMA     ACIMA ï¿½ A SETA PARA CIMA
                 {
                     linha_j2--;
                     if(linha_j2>limitesup)
@@ -554,11 +543,11 @@ main ()
                         linha_j2++;
                     }
                 }
-                if (tecla==ESC)//OPÇOES DE BOTOES Q FAZEM ALGUMA COISA- ACABA O JOGO
+                if (tecla==ESC)//OPï¿½OES DE BOTOES Q FAZEM ALGUMA COISA- ACABA O JOGO
                 {
                     return 0;
                 }
-                if(tecla=='r')//RECOMEÇA O JOGO
+                if(tecla=='r')//RECOMEï¿½A O JOGO
                 {
                     restart=3;
                     ponto1=0;
