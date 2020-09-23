@@ -21,10 +21,10 @@ git clone https://github.com/MatheusBurda/Pong.git
 *Ou baixe o código no botão verde no topo da página e extraia os arquivos.
 
 Rodando o jogo:
+No diretório que está o projeto:
 ```
-cd Pong # Muda para o diretório que está o projeto
-gcc pong.c -o pong # Compila o arquivo
-./pong # Roda o jogo
+gcc pong.c -o pong
+./pong 
 ```
 
 E é só se divertir agora!
