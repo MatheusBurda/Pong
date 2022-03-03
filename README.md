@@ -2,7 +2,7 @@
 
 Inspirado no famoso jogo de Atari, Pong foi desenvolvido quando estava começando a aprender a programar. É um código bem amador e com diversas falhas, mas que significou muito ao começar a programar.
 
-![PONG](pong.gif)
+![PONG](https://github.com/MatheusBurda/Pong/raw/master/pong.gif)
 
 
 ## Instalando
